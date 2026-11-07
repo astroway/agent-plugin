@@ -1,0 +1,35 @@
+{
+  "name": "astroway",
+  "owner": {
+    "name": "AstroWay",
+    "email": "astroway.info@gmail.com"
+  },
+  "description": "AstroWay plugins for Claude Code.",
+  "plugins": [
+    {
+      "name": "astroway",
+      "source": "./",
+      "description": "Teaches your coding agent to build on the AstroWay astrology API: which hosted MCP server to use for which subject, birth data it must ask for, small responses with fields and precision, and what each call costs. Connects the keyless docs server and, with your key, one subject server.",
+      "category": "api",
+      "keywords": [
+        "astrology",
+        "astrology-api",
+        "mcp",
+        "remote-mcp",
+        "agent-skill",
+        "natal-chart",
+        "horoscope",
+        "vedic-astrology",
+        "human-design",
+        "bazi",
+        "tarot",
+        "numerology",
+        "synastry",
+        "transits"
+      ],
+      "homepage": "https://api.astroway.info/en/agent-setup/claude-code/",
+      "repository": "https://github.com/astroway/agent-plugin",
+      "license": "MIT"
+    }
+  ]
+}

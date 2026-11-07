@@ -1,0 +1,43 @@
+{
+  "name": "astroway",
+  "displayName": "AstroWay",
+  "version": "1.0.0",
+  "description": "Teaches your coding agent to build on the AstroWay astrology API: which hosted MCP server to use for which subject, birth data it must ask for, small responses with fields and precision, and what each call costs. Connects the keyless docs server and, with your key, one subject server.",
+  "author": {
+    "name": "AstroWay",
+    "email": "astroway.info@gmail.com"
+  },
+  "homepage": "https://api.astroway.info/en/agent-setup/cursor/",
+  "repository": "https://github.com/astroway/agent-plugin",
+  "license": "MIT",
+  "keywords": [
+    "astrology",
+    "astrology-api",
+    "mcp",
+    "remote-mcp",
+    "agent-skill",
+    "natal-chart",
+    "horoscope",
+    "vedic-astrology",
+    "human-design",
+    "bazi",
+    "tarot",
+    "numerology",
+    "synastry",
+    "transits"
+  ],
+  "logo": "assets/logo.png",
+  "variables": {
+    "type": "object",
+    "properties": {
+      "ASTROWAY_API_KEY": {
+        "type": "string",
+        "title": "AstroWay API key",
+        "description": "aw_live_ or aw_test_ key from https://api.astroway.info/dashboard/sign-up"
+      }
+    },
+    "required": [
+      "ASTROWAY_API_KEY"
+    ]
+  }
+}

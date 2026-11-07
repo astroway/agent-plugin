@@ -1,0 +1,65 @@
+{
+  "name": "astroway",
+  "displayName": "AstroWay",
+  "version": "1.0.0",
+  "description": "Teaches your coding agent to build on the AstroWay astrology API: which hosted MCP server to use for which subject, birth data it must ask for, small responses with fields and precision, and what each call costs. Connects the keyless docs server and, with your key, one subject server.",
+  "author": {
+    "name": "AstroWay",
+    "email": "astroway.info@gmail.com",
+    "url": "https://api.astroway.info"
+  },
+  "homepage": "https://api.astroway.info/en/agent-setup/claude-code/",
+  "repository": "https://github.com/astroway/agent-plugin",
+  "license": "MIT",
+  "keywords": [
+    "astrology",
+    "astrology-api",
+    "mcp",
+    "remote-mcp",
+    "agent-skill",
+    "natal-chart",
+    "horoscope",
+    "vedic-astrology",
+    "human-design",
+    "bazi",
+    "tarot",
+    "numerology",
+    "synastry",
+    "transits"
+  ],
+  "userConfig": {
+    "api_key": {
+      "type": "string",
+      "title": "AstroWay API key",
+      "description": "aw_live_ or aw_test_ key from https://api.astroway.info/dashboard/sign-up. Leave empty to use only the keyless docs server.",
+      "sensitive": true
+    },
+    "domain": {
+      "type": "string",
+      "title": "Subject server",
+      "description": "Which hosted MCP server the key connects to. One subject loads far fewer tools than the whole catalogue.",
+      "options": [
+        "core",
+        "vedic",
+        "chinese",
+        "hellenistic",
+        "tarot",
+        "numerology",
+        "human-design",
+        "forecast",
+        "relationships",
+        "psychological",
+        "divination",
+        "applied",
+        "reports",
+        "platform"
+      ],
+      "default": "core"
+    }
+  },
+  "documentationUrl": "https://api.astroway.info/en/agent-setup/",
+  "supportUrl": "https://api.astroway.info/en/contact/",
+  "privacyPolicyUrl": "https://api.astroway.info/en/privacy/",
+  "termsOfServiceUrl": "https://api.astroway.info/en/terms/",
+  "icon": "./assets/logo.png"
+}

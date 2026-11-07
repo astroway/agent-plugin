@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "astroway-docs": {
+      "type": "http",
+      "url": "https://mcp.astroway.info/mcp/docs"
+    },
+    "astroway": {
+      "type": "http",
+      "url": "https://mcp.astroway.info/mcp/${user_config.domain}",
+      "headers": {
+        "Authorization": "Bearer ${user_config.api_key}"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "astroway-docs": {
+      "url": "https://mcp.astroway.info/mcp/docs"
+    },
+    "astroway": {
+      "url": "https://mcp.astroway.info/mcp/core",
+      "headers": {
+        "Authorization": "Bearer ${ASTROWAY_API_KEY}"
+      }
+    }
+  }
+}
