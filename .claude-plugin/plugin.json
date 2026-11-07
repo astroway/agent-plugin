@@ -1,8 +1,8 @@
 {
   "name": "astroway",
   "displayName": "AstroWay",
-  "version": "1.0.0",
-  "description": "Teaches your coding agent to build on the AstroWay astrology API: which hosted MCP server to use for which subject, birth data it must ask for, small responses with fields and precision, and what each call costs. Connects the keyless docs server and, with your key, one subject server.",
+  "version": "1.1.0",
+  "description": "Teaches your coding agent to build on the AstroWay astrology API: which endpoint answers which question, which hosted MCP server to connect, the birth data it must ask for, what each call costs, and the REST contract for app code. Connects the keyless docs server and, with your key, one subject server.",
   "author": {
     "name": "AstroWay",
     "email": "astroway.info@gmail.com",

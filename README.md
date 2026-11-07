@@ -4,7 +4,7 @@ Teaches your coding agent to build on the [AstroWay astrology API](https://api.a
 
 One install gives the agent:
 
-- **A skill** (`skills/astroway/SKILL.md`) with the rules that matter: which of the 14 subject servers to use for which question, ask for birth date, time and place instead of guessing them, send time zones as IANA names, ask for small responses with `fields` and `precision`, read the price on every tool and ask before expensive calls, never invent an endpoint.
+- **A skill** (`skills/astroway/SKILL.md`) with the rules that matter: which endpoint answers which question and on which of the 14 subject servers, ask for birth date, time and place instead of guessing them, send time zones as IANA names, ask for small responses with `fields` and `precision`, read the price on every tool and ask before expensive calls, keep the key on the server, never invent an endpoint. Error codes and limits sit in `skills/astroway/references/errors-and-limits.md`, read when a call fails.
 - **The docs server**, `https://mcp.astroway.info/mcp/docs`, with no key: `find_endpoint` returns the method, URL, credit cost and required fields of any of the API's operations, so the agent looks things up instead of guessing.
 - **One subject server with your key**, for real calculations: natal charts, transits, Vedic, BaZi, Human Design, tarot, numerology and the rest.
 
@@ -33,6 +33,8 @@ git clone https://github.com/astroway/agent-plugin ~/.cursor/plugins/local/astro
 ```
 
 Cursor loads the skill, the rule in `rules/astroway.mdc` and the two servers from `mcp.json`. The keyed server reads the `ASTROWAY_API_KEY` plugin variable, which you set under **Plugins**, **Configure**.
+
+Without the plugin, copy `cursor/astroway.mdc` into your project's `.cursor/rules/`: it is the same guidance as a single rule for code that calls the API.
 
 If you would rather wire the servers yourself, put this in `~/.cursor/mcp.json` or the project's `.cursor/mcp.json` and keep the key in your environment:
 
@@ -82,13 +84,17 @@ All of them live under `https://mcp.astroway.info`. The current list is always a
 .cursor-plugin/plugin.json       Cursor manifest
 mcp.json                         servers for Cursor
 rules/astroway.mdc               the short version, as a Cursor rule
+cursor/astroway.mdc              standalone Cursor rule for projects without the plugin
 skills/astroway/SKILL.md         the guidance itself, read by both
+skills/astroway/references/      error codes and limits, loaded when needed
 ```
 
 There is no code to run and nothing to build. The plugin contains no key.
 
 ## Links
 
+- [AGENTS.md](https://api.astroway.info/AGENTS.md): the REST playbook with curl, TypeScript and Python
+- [llms.txt](https://api.astroway.info/llms.txt): every subject and its key endpoints; [llms-full.txt](https://api.astroway.info/llms-full.txt) has every operation with its price
 - [Agent setup for every client](https://api.astroway.info/en/agent-setup/)
 - [Credits and prices](https://api.astroway.info/en/credits/)
 - [Astrology chat starter](https://github.com/astroway/starter-astrology-chat): the same servers inside a web app

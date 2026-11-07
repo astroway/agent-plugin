@@ -1,13 +1,14 @@
 ---
-description: How to use the AstroWay astrology API and its hosted MCP servers. Apply when working on astrology, horoscope, natal chart, Vedic, BaZi, Human Design, tarot or numerology features, or when calling mcp.astroway.info or api.astroway.info.
+description: How to use the AstroWay astrology API and its hosted MCP servers. Apply when working on astrology, horoscope, natal chart, synastry, Vedic, BaZi, Human Design, tarot or numerology features, or when calling mcp.astroway.info or api.astroway.info.
 alwaysApply: false
 ---
 
 - Full guidance is in the `astroway` skill. The short version:
 - Use a subject server (`https://mcp.astroway.info/mcp/core`, `/vedic`, `/chinese`, `/tarot`, `/human-design`, `/forecast`, `/relationships`, ...; list at `https://mcp.astroway.info/domains`), not the whole catalogue at `/mcp`.
-- Look up endpoints and prices on the keyless docs server `https://mcp.astroway.info/mcp/docs` (`find_endpoint`). Never invent a tool name or path.
-- Ask for birth date, time and place before a chart. Do not guess a time. Send `timezone` as an IANA name or `"auto"`, never a computed offset; unknown time is `timeUnknown: true`.
+- Look up endpoints and prices on the keyless docs server `https://mcp.astroway.info/mcp/docs` (`find_endpoint`). Never invent a tool name, path or field.
+- Ask for birth date, time and place before a chart. Do not guess a time. Send `timezone` as an IANA name or `"auto"`, never a computed offset; sending no timezone at all means UTC, silently. Unknown time is `timeUnknown: true` (`/v1/chart`, `/v1/synastry` only).
 - Pass `fields` (dotted paths relative to `data`) and `precision: 2` to keep results small.
 - Read the `[Cost: N credits]` line on each tool; ask before reports or anything Heavy or Premium.
-- REST: `https://api.astroway.info/v1`, header `X-Api-Key`, envelope `{ ok, data }` or `{ ok: false, error: { code, message } }`. No CORS: call from a server route and keep the key out of client bundles.
+- REST: `https://api.astroway.info/v1`, header `X-Api-Key`, envelope `{ ok, data }` or `{ ok: false, error: { code, message } }`; branch on `error.code`. Playbook: `https://api.astroway.info/AGENTS.md`.
+- The key stays server-side: an ordinary key answers `403 ORIGIN_FORBIDDEN` to browser requests. Never put it under `NEXT_PUBLIC_` or `VITE_`; browser use needs a domain-bound `pk_` key.
 - Report only values a tool returned.
